@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ảnh và lời chúc dành cho Mẹ</title>
+    <style>
+      :root {
+        --pink: #c94f6f;
+        --deep-pink: #9f3155;
+        --cream: #fff8f2;
+        --ink: #552d3b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: var(--ink);
+        background: linear-gradient(135deg, #fff0f3, #ffd6a5);
+      }
+
+      .bg-hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 26px;
+        color: rgba(255, 105, 135, 0.8);
+        animation: floatUp 8s linear infinite;
+      }
+
+      .heart:nth-child(1) {
+        left: 8%;
+        top: 110%;
+        animation-delay: 0s;
+      }
+      .heart:nth-child(2) {
+        left: 18%;
+        top: 110%;
+        animation-delay: 1.2s;
+      }
+      .heart:nth-child(3) {
+        left: 30%;
+        top: 110%;
+        animation-delay: 2.5s;
+      }
+      .heart:nth-child(4) {
+        left: 45%;
+        top: 110%;
+        animation-delay: 3.7s;
+      }
+      .heart:nth-child(5) {
+        left: 60%;
+        top: 110%;
+        animation-delay: 1.8s;
+      }
+      .heart:nth-child(6) {
+        left: 72%;
+        top: 110%;
+        animation-delay: 2.9s;
+      }
+      .heart:nth-child(7) {
+        left: 86%;
+        top: 110%;
+        animation-delay: 4.3s;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) scale(0.8) rotate(0deg);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-120vh) scale(1.4) rotate(25deg);
+          opacity: 0;
+        }
+      }
+
+      .gallery {
+        width: min(100%, 760px);
+        padding: 30px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 24px;
+        box-shadow: 0 24px 55px rgba(126, 53, 74, 0.22);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        color: var(--deep-pink);
+        font-size: clamp(1.8rem, 5vw, 3rem);
+      }
+
+      .intro {
+        margin: 0 0 22px;
+        font-size: 1.05rem;
+      }
+
+      .slides {
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+        background: var(--cream);
+      }
+
+      .slide {
+        display: none;
+        animation: appear 0.45s ease;
+      }
+
+      .slide.active {
+        display: block;
+      }
+
+      .slide img {
+        display: block;
+        width: 100%;
+        height: min(58vw, 470px);
+        min-height: 260px;
+object-fit: contain;
+        background: var(--cream);
+      }
+
+      .wish {
+        margin: 0;
+        padding: 18px 20px 20px;
+        color: #ffffff;
+        background: var(--pink);
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .music-player {
+        display: block;
+        width: min(100%, 420px);
+        margin: 20px auto 0;
+      }
+
+      .control,
+      .dot {
+        border: 0;
+        cursor: pointer;
+      }
+
+      .control {
+        padding: 10px 18px;
+        border-radius: 999px;
+        color: #ffffff;
+        background: var(--deep-pink);
+        font: inherit;
+        font-weight: 700;
+      }
+
+      .control:hover,
+      .control:focus-visible {
+        background: #76233f;
+      }
+
+      .dots {
+        display: flex;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 11px;
+        height: 11px;
+        padding: 0;
+        border-radius: 50%;
+        background: #e8a4b5;
+      }
+
+      .dot.active {
+        background: var(--deep-pink);
+        transform: scale(1.25);
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateX(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 520px) {
+        .gallery {
+          padding: 20px 14px;
+        }
+
+        h1 {
+          line-height: 1.2;
+        }
+
+        .intro {
+          line-height: 1.5;
+        }
+
+        .controls {
+          gap: 10px;
+        }
+
+        .control {
+          padding: 9px 13px;
+        }
+      }
+      .love-button {
+	border: 0;
+	border-radius: 999px;
+	padding: 13px 24px;
+	background: #c94f6f;
+	color: #ffffff;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow: 0 8px 18px rgba(201, 79, 111, 0.28);
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.love-button:hover {
+	background: #b2395f;
+	transform: translateY(-2px);
+}
+
+.love-button:focus-visible {
+	outline: 3px solid #ffd166;
+	outline-offset: 3px;
+}
+
+.love-message {
+	margin: 14px 0 0;
+	color: #b2395f;
+	font-weight: 700;
+}
+    </style>
+  </head>
+  <body>
+    <div class="bg-hearts" aria-hidden="true">
+      <div class="heart">❤</div>
+      <div class="heart">❤</div>
+      <div class="heart">❤</div>
+      <div class="heart">❤</div>
+      <div class="heart">❤</div>
+      <div class="heart">❤</div>
+      <div class="heart">❤</div>
+    </div>
+
+    <main class="gallery">
+      <h1>Những lời chúc dành cho Mẹ 💖</h1>
+      <p class="intro">
+        Mỗi bức ảnh là một lời yêu thương con muốn gửi đến Mẹ.
+      </p>
+
+      <section class="slides" aria-live="polite">
+        <article class="slide active">
+          <img
+            src="img/h1.png"
+            alt="Kỷ niệm cùng Mẹ"
+          />
+          <p class="wish">
+            Chúc Mẹ luôn mạnh khỏe, vui vẻ và có thật nhiều nụ cười mỗi ngày. 💐
+          </p>
+        </article>
+        <article class="slide">
+          <img
+            src="img/h2.png"
+            alt="Khoảnh khắc yêu thương bên Mẹ"
+          />
+          <p class="wish">
+            Mong mọi điều bình an và hạnh phúc sẽ luôn ở bên Mẹ hôm nay và mãi
+            mãi. 🎂
+          </p>
+        </article>
+        <article class="slide">
+          <img
+            src="img/h3.png"
+            alt="Món quà sinh nhật dành cho Mẹ"
+          />
+          <p class="wish">
+            Cảm ơn Mẹ vì tất cả tình yêu thương. Con yêu Mẹ nhiều hơn những lời
+            con có thể nói. ❤️
+          </p>
+        </article>
+        <article class="slide">
+          <img
+            src="img/h4.png"
+            alt="Kỷ niệm yêu thương cùng Mẹ"
+          />
+          <p class="wish">
+          Bọn con chúc Mẹ luôn hạnh phúc và ngập tràn yêu thương trong mỗi khoảnh
+            khắc. 💖
+          </p>
+        </article>
+      </section>
+
+      <div class="controls">
+        <button
+          class="control"
+          type="button"
+          id="previous"
+          aria-label="Ảnh trước"
+        >
+          ← Trước
+        </button>
+        <div class="dots" aria-label="Chọn ảnh">
+          <button
+            class="dot active"
+            type="button"
+            aria-label="Xem ảnh 1"
+          ></button>
+          <button class="dot" type="button" aria-label="Xem ảnh 2"></button>
+          <button class="dot" type="button" aria-label="Xem ảnh 3"></button>
+          <button class="dot" type="button" aria-label="Xem ảnh 4"></button>
+        </div>
+        <button
+          class="control"
+          type="button"
+          id="next"
+          aria-label="Ảnh tiếp theo"
+        >
+          Sau →
+        </button>
+      </div>
+
+      <button
+        class="control"
+        type="button"
+        onclick="window.location.href = 'index.html'"
+        aria-label="Quay về trang chính"
+      >
+        ← Về trang chính
+      </button>
+    </main>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("active", slideIndex === currentSlide);
+        });
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === currentSlide);
+        });
+      }
+
+      document
+        .getElementById("previous")
+        .addEventListener("click", () => showSlide(currentSlide - 1));
+      document
+        .getElementById("next")
+        .addEventListener("click", () => showSlide(currentSlide + 1));
+      dots.forEach((dot, dotIndex) =>
+        dot.addEventListener("click", () => showSlide(dotIndex)),
+      );
+    </script>
+</body>
+</html>

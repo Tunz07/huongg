@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng Sinh Nhật Mẹ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe1e8 30%, #ffd6a5 100%);
+            color: #5b2c3a;
+            overflow: hidden;
+        }
+
+        .bg-hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 26px;
+            color: rgba(255, 105, 135, 0.8);
+            animation: floatUp 8s linear infinite;
+        }
+
+        .heart:nth-child(1) { left: 8%; top: 110%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 18%; top: 110%; animation-delay: 1.2s; }
+        .heart:nth-child(3) { left: 30%; top: 110%; animation-delay: 2.5s; }
+        .heart:nth-child(4) { left: 45%; top: 110%; animation-delay: 3.7s; }
+        .heart:nth-child(5) { left: 60%; top: 110%; animation-delay: 1.8s; }
+        .heart:nth-child(6) { left: 72%; top: 110%; animation-delay: 2.9s; }
+        .heart:nth-child(7) { left: 86%; top: 110%; animation-delay: 4.3s; }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(0.8) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh) scale(1.4) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        .card {
+            position: relative;
+            width: min(90vw, 900px);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 32px;
+            box-shadow: 0 25px 50px rgba(160, 58, 78, 0.25);
+            padding: 32px 28px 26px;
+            text-align: center;
+        }
+
+        .title {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: #c94f6f;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            margin: 8px 0 22px;
+            font-size: 1.1rem;
+            color: #7b4d5a;
+            font-weight: 600;
+        }
+
+        .photo-wrap {
+            position: relative;
+            display: inline-block;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 18px 30px rgba(164, 92, 108, 0.25);
+        }
+.photo-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(201,79,111,0.12));
+            pointer-events: none;
+        }
+
+        img {
+            display: block;
+            width: min(100%, 700px);
+            height: 420px;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .message {
+            margin: 22px auto 0;
+            max-width: 720px;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.8;
+            color: #4e2f38;
+            font-weight: 500;
+        }
+
+        .message strong {
+            color: #b2395f;
+        }
+
+        .footer {
+            margin-top: 18px;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 700;
+            color: #d1527a;
+        }
+
+        .music-player {
+            display: block;
+            width: min(100%, 420px);
+            margin: 18px auto 0;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px 16px 18px;
+            }
+
+            img {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-hearts" aria-hidden="true">
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+    </div>
+
+    <main class="card" align="center">
+        <h1 class="title">🎉 Chúc mừng sinh nhật Mẹ! 🎉</h1>
+        <p class="subtitle">Mẹ là niềm tin, là sức mạnh và là ánh sáng của con</p>
+
+        <div class="message">
+            <strong>Mẹ yêu,</strong><br>
+            Con chúc Mẹ luôn mạnh khỏe, hạnh phúc, bình an và luôn trẻ trung trong từng nụ cười.<br>
+            Mong rằng mỗi ngày của Mẹ đều tràn ngập niềm vui, tiếng cười và những khoảnh khắc đẹp nhất.<br>
+            Con yêu Mẹ rất nhiều, rất nhiều, và sẽ luôn bên Mẹ trong mọi ngày của cuộc đời này.<br>
+            <strong>Happy Birthday, Mẹ! 💖</strong>
+        </div>
+        <button class="love-button" type="button" onclick="window.location.href='anhvaloichuc.html'">
+            Gửi lời yêu thương 💌
+        </button>
+    </main>
+</body>
+</html>
